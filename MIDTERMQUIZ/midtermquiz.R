@@ -20,23 +20,21 @@ print (args$W)
 print (args$grey)
 print (args$angle)
 
-#palitan ung parameters img,H,W,gry,angle ng ano man gusto mo
-# wag kalimutan isubstitute ung parameters sa if statements sa baba
 augmented <- function(img,H,W,gry,angle){
   if(gry==TRUE){
     imge <- load.image(img)
     gray <- grayscale(imge)
-    gray1 <- save.image(im=gray,file=paste0("greyimage.jpg"))
+    gray1 <- save.image(im=gray,file=paste0("grayscale.jpg"))
   }
   if(H&&W > 1){
     imge <- load.image(img)
     imgrsze <- resize(imge, size_x = H, size_y = W)
-    save.image(im = imgrsze,file=paste0("resizedimage.jpg"))
+    save.image(im = imgrsze,file=paste0("resized.jpg"))
   }
   if(angle>1){
     imge <- load.image(img)
     invimg <- imrotate(im=imge,angle)
-    invimg1 <- save.image(im=invimg,file=paste0("invertedimage.jpg"))
+    invimg1 <- save.image(im=invimg,file=paste0("inverted.jpg"))
   }
 }
 #output
